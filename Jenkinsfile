@@ -4,27 +4,27 @@ pipeline {
 	stages {
 		stage("copy") {
 			steps {
-				sh echo "code copied"
+				sh "echo 'code copied'"
 				git url: "https://github.com/kothapallisrikanth/amazon-linux.git",branch:"master"
 			}
 		}
 		
 		stage("build") {
 			steps {
-				sh echo "code build"
+				sh "echo 'code build'"
 				
 			}
 		}
 		
 		stage("test") {
 			steps {
-				sh echo "code test"
+				sh "echo 'code test'"
 			}
 		}
 		
 		stage("deploy") {
 			steps {
-				sh echo "code deploy"
+				sh "echo 'code deploy'"
 			}
 		}
 	}
