@@ -12,6 +12,7 @@ pipeline {
 		stage("build") {
 			steps {
 				sh "echo 'code build'"
+				sh "docker image prune -af"
 				sh "docker build . -t srikanth370/amazonimage:latest"
 				
 			}
@@ -26,6 +27,7 @@ pipeline {
 		stage("deploy") {
 			steps {
 				sh "echo 'code deploy'"
+				sh 'docker kill $(docker ps -q)'
 				sh 'docker run -itd  srikanth370/amazonimage:latest'
 			}
 		}
