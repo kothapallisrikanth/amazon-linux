@@ -12,6 +12,7 @@ pipeline {
 		stage("build") {
 			steps {
 				sh "echo 'code build'"
+				sh "docker build . -t srikanth370/amazonimage:latest"
 				
 			}
 		}
