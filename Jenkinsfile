@@ -26,12 +26,16 @@ pipeline {
 		stage("deploy") {
 			steps {
 				sh "echo 'code deploy'"
+				sh 'docker run -itd  srikanth370/amazonimage:latest'
 			}
 		}
 	}
 	post{
 		always{
 			sh 'docker images'
+			sh 'docker ps'
 		}
 	}
+	
+	
 }
