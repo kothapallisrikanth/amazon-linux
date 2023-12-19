@@ -12,10 +12,10 @@ pipeline {
 		stage("build") {
 			steps {
 				sh "echo 'code build'"
-				sh "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 720621264458.dkr.ecr.ap-south-1.amazonaws.com"
-				sh "docker build . -t  amazon-linux-image"
-				sh "docker tag amazon-linux-image:latest 720621264458.dkr.ecr.ap-south-1.amazonaws.com/amazon-linux:latest"
-				sh "docker push 720621264458.dkr.ecr.ap-south-1.amazonaws.com/amazon-linux:latest"
+				sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 720621264458.dkr.ecr.ap-south-1.amazonaws.com'
+				sh 'docker build . -t  amazon-linux-image'
+				sh 'docker tag amazon-linux-image:latest 720621264458.dkr.ecr.ap-south-1.amazonaws.com/amazon-linux:latest'
+				sh 'docker push 720621264458.dkr.ecr.ap-south-1.amazonaws.com/amazon-linux:latest'
 			}
 		}
 		
