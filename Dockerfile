@@ -1,3 +1,3 @@
-FROM amazonlinux:lates
-PORT 8010
+FROM amazonlinux:latest
+EXPOSE 8010
 
